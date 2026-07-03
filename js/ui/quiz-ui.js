@@ -61,6 +61,9 @@ window.RomeGame.QuizUI = (function () {
 
             quizContainer.innerHTML = html;
 
+            // Narrate the question
+            window.RomeGame.VoiceUI.speakQuestion(question.text);
+
             // Attach click listeners to choice buttons
             var buttons = quizContainer.querySelectorAll(".choice-btn");
             for (var j = 0; j < buttons.length; j++) {
@@ -142,6 +145,9 @@ window.RomeGame.QuizUI = (function () {
 
             container.innerHTML = html;
 
+            // Narrate the result and explanation
+            window.RomeGame.VoiceUI.speakResult(result.isCorrect, result.infoPanel);
+
             // Scroll the info panel into view
             container.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
@@ -152,6 +158,7 @@ window.RomeGame.QuizUI = (function () {
 
         // Handle the "Continue" button after reading the info panel
         handleContinue: function () {
+            window.RomeGame.VoiceUI.stop();
             var engine = window.RomeGame.QuizEngine;
             var hasMore = engine.nextQuestion();
 

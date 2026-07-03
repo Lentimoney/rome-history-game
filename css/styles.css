@@ -96,6 +96,12 @@ h4 { font-size: 1.1rem; }
     color: var(--rome-deep-red);
 }
 
+#header-nav button.voice-active {
+    background: var(--rome-gold);
+    color: var(--rome-deep-red);
+    font-weight: 700;
+}
+
 #game-main {
     flex: 1;
     display: flex;

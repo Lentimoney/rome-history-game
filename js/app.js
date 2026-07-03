@@ -8,6 +8,9 @@
         // Load saved progress
         window.RomeGame.GameState.load();
 
+        // Initialize voice narration
+        window.RomeGame.VoiceUI.init();
+
         // --- Title Screen Buttons ---
 
         // Begin Journey button
